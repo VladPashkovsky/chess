@@ -39,3 +39,14 @@
 .white {
   background-color: #dcd0d0;
 }
+
+.selected {
+  background-color: #78342f;
+}
+
+.available {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: green;
+}

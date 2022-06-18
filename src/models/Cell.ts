@@ -11,7 +11,13 @@ export class Cell {
   available: boolean //
   id: number //для реакт ключей
 
-  constructor(board: Board, x: number, y: number, color: Colors, figure: Figure | null) {
+  constructor(
+    board: Board,
+    x: number,
+    y: number,
+    color: Colors,
+    figure: Figure | null
+  ) {
     this.x = x
     this.y = y
     this.board = board

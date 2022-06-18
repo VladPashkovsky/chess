@@ -9,7 +9,7 @@ export enum FigureNames {
   PAWN = 'Пешка',
   QUEEN = 'Ферзь',
   ROOK = 'Ладья',
-  BISHOP = 'Слон'
+  BISHOP = 'Слон',
 }
 
 export class Figure {
@@ -32,6 +32,5 @@ export class Figure {
     return true
   }
 
-  moveFigure(target: Cell) {
-  }
+  moveFigure(target: Cell) {}
 }
