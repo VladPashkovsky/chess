@@ -1,7 +1,6 @@
 import { Colors } from './Colors'
 import { Figure } from './figures/Figure'
 import { Board } from './Board'
-import cellComponent from '../components/CellComponent'
 
 export class Cell {
   readonly x: number
@@ -93,9 +92,18 @@ export class Cell {
     this.figure.cell = this
   }
 
+  addLostFigure(figure: Figure) {
+    figure.color === Colors.BLACK
+      ? this.board.lostBlackFigures.push(figure)
+      : this.board.lostWhiteFigures.push(figure)
+  }
+
   moveFigure(target: Cell) {
     if (this.figure && this.figure?.canMove(target)) {
       this.figure.moveFigure(target)
+      if (target.figure) {
+        this.addLostFigure(target.figure)
+      }
       target.setFigure(this.figure)
       this.figure = null
 
